@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Resume</title>
+		<script
+			src="https://kit.fontawesome.com/c9c2d59ab0.js"
+			crossorigin="anonymous"
+		></script>
+		<style>
+			:root {
+				--bg-color: #fcfffc;
+				--text-color-grey: #2d3a3a;
+				--text-color-heading: #118ab2;
+				--heading-padding-top: 0.9em;
+			}
+
+			*,
+			*:before,
+			*:after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				height: 100vh;
+				background: #aaa;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			a:visited {
+				color: blue;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			div.container {
+				width: 8.5in;
+				height: 11in;
+				padding: 0.5in;
+				background: var(--bg-color);
+			}
+
+			header {
+				text-align: center;
+			}
+
+			h1 {
+				text-transform: lowercase;
+				font-variant: small-caps;
+			}
+
+			h2 {
+				text-transform: lowercase;
+				font-variant: small-caps;
+				padding-top: var(--heading-padding-top);
+			}
+			header p {
+				color: var(--text-color-grey);
+			}
+			nav ul {
+				display: flex;
+				justify-content: center;
+				flex-direction: row;
+				gap: 3em;
+				font-size: 13px;
+				padding-top: var(--heading-padding-top);
+			}
+
+			.item-container h3 {
+				color: var(--text-color-heading);
+				padding-top: calc(var(--heading-padding-top) - 0.25em);
+			}
+
+			.detail-in-header {
+				font-size: 0.8em;
+				color: #2d3a3a;
+			}
+
+			.detail-in-header a {
+				color: blue;
+				padding-inline: 0.5em;
+				font-weight: 600;
+			}
+
+			/* Targets the skills for projects & work section */
+			.projects-section ul:nth-child(2n),
+			.work-section ul:nth-child(2n) {
+				color: var(--text-color-grey);
+				font-size: 0.8em;
+				display: flex;
+				gap: 15px;
+			}
+
+			/* Targets the description of the projects & work section */
+			.projects-section ul:nth-child(2n - 1),
+			.work-section ul:nth-child(2n - 1) {
+				list-style: disc;
+
+				padding-top: 0.25em;
+				padding-inline: 1.5em 1em;
+			}
+
+			.skills-section ul {
+				padding-top: 0.75em;
+				padding-inline: 1em;
+				display: flex;
+				flex-direction: row;
+				gap: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Abrahym Sharf Eldden</h1>
+				<p>Software Developer</p>
+
+				<nav>
+					<ul>
+						<li>
+							<i class="fa fa-envelope fa-xl"></i>
+							<a
+								href="mailto:asharfeldden@gmail.com"
+								target="_blank"
+							>
+								asharfeldden@gmail.com
+							</a>
+						</li>
+						<li>
+							<i class="fa fa-globe fa-xl"></i>
+
+							<a href="https://abrahym.dev" target="_blank">
+								abrahym.dev
+							</a>
+						</li>
+						<li>
+							<i class="fab fa-github fa-xl"></i>
+							<a
+								href="https://github.com/abrahym-sharfeldden"
+								target="_blank"
+							>
+								github.com/abrahym-sharfeldden
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<section aria-labelledby="projects" class="projects-section">
+					<h2 id="projects">Projects</h2>
+					<hr />
+					<div class="item-container">
+						<h3>
+							Pantry Inventory
+							<span class="detail-in-header">
+								<em>
+									&mdash;
+									<a href="#">Frontend Code</a>
+									<a href="#">Backend Code</a>
+									<a href="#">Live</a>
+								</em>
+							</span>
+						</h3>
+						<ul>
+							<li>React</li>
+							<li>REST API</li>
+							<li>Express</li>
+							<li>Sequelize</li>
+							<li>PostgreSQL</li>
+						</ul>
+						<ul>
+							<li>
+								This project was made to solve the problem of
+								losing track of items in pantries and cupboards
+								in the kitchen. This app renders a list of items
+								that the user can add, edit or delete and stores
+								the data in a PostgreSQL database through a
+								Sequelize ORM and utilizes complex
+								<em>m:n</em> relationships between the Models.
+							</li>
+						</ul>
+					</div>
+					<div class="item-container">
+						<h3>
+							React Boilerplate
+							<span class="detail-in-header">
+								<em>&mdash; <a href="#">Repo</a></em>
+							</span>
+						</h3>
+						<ul>
+							<li>React</li>
+							<li>Node</li>
+							<li>Webpack</li>
+						</ul>
+						<ul>
+							<li>
+								This project was made to experiment with core
+								React and deep dive into the complexities that
+								CRA handles for you behind the hood. It creates
+								a working boilerplate directory for you with one
+								simple command.
+							</li>
+						</ul>
+					</div>
+					<div class="item-container">
+						<h3>
+							Sorting Visualizer
+							<span class="detail-in-header">
+								<em>
+									&mdash; <a href="#">Code</a>
+									<a href="#">Live</a>
+								</em>
+							</span>
+						</h3>
+						<ul>
+							<li>HTML/CSS</li>
+							<li>Javascript</li>
+							<li>Data Structures & Algorithms</li>
+						</ul>
+						<ul>
+							<li>
+								Uses DOM manipulation, together with JS Promises
+								to visualize sorting algorithms on unsorted
+								vertical bars.
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section aria-labelledby="work-experience" class="work-section">
+					<h2 id="work-experience">Experience</h2>
+					<hr />
+					<div class="item-container">
+						<h3>
+							Software Developer
+							<span class="detail-in-header">
+								<em>at EnerKnol</em></span
+							>
+						</h3>
+
+						<ul>
+							<li>Wordpress</li>
+							<li>Javascript</li>
+							<li>JQuery</li>
+							<li>Python</li>
+						</ul>
+						<ul>
+							<li>
+								Worked with client-facing software to develop
+								and test features to meet the needs of consumers
+								and clients.
+							</li>
+							<li>
+								Enhanced existing features and solved
+								client-facing problems.
+							</li>
+						</ul>
+					</div>
+					<div class="item-container">
+						<h3>
+							Projects Associate
+							<span class="detail-in-header">
+								<em>at Opportunities for a Better Tomorrow</em>
+							</span>
+						</h3>
+						<ul>
+							<li>HTML/CSS</li>
+							<li>Javascript</li>
+							<li>PHP</li>
+						</ul>
+						<ul>
+							<li>
+								Managed 3 teams of 5-7 members to develop a web
+								application for small businesses.
+							</li>
+							<li>
+								Measured project performance weekly and
+								increased development efficiency by 50%
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section aria-labellledby="other-skills" class="skills-section">
+					<h2 id="other-skills">Other Skills</h2>
+					<hr />
+					<ul>
+						<li>Semantic HTML</li>
+						<li>Git</li>
+						<li>Travis CI</li>
+						<li>Passport.js</li>
+						<li>DB Modeling</li>
+						<li>Nginx</li>
+					</ul>
+				</section>
+				<section aria-labelledby="education" class="education-section">
+					<h2 id="education">Education</h2>
+					<hr />
+					<div class="item-container">
+						<h3>
+							CUNY - Brooklyn College
+							<span class="detail-in-header">
+								<em>
+									&mdash; B.S. Computer and Information
+									Science</em
+								>
+							</span>
+						</h3>
+					</div>
+				</section>
+			</main>
+			<footer></footer>
+		</div>
+	</body>
+</html>
