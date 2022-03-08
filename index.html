@@ -5,15 +5,20 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Resume</title>
-		<script
-			src="https://kit.fontawesome.com/c9c2d59ab0.js"
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
 			crossorigin="anonymous"
-		></script>
+			referrerpolicy="no-referrer"
+		/>
 		<style>
 			:root {
 				--bg-color: #fcfffc;
 				--text-color-grey: #2d3a3a;
 				--text-color-heading: #118ab2;
+				--text-color-links: #1155cc;
 				--heading-padding-top: 0.9rem;
 			}
 
@@ -31,10 +36,14 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				font-size: 10.5pt;
 			}
 
+			a,
 			a:visited {
-				color: blue;
+				color: var(--text-color-links);
+				padding-left: 0.5em;
+				font-weight: 600;
 			}
 
 			ul {
@@ -69,9 +78,13 @@
 				display: flex;
 				justify-content: center;
 				flex-direction: row;
-				gap: 3em;
-				font-size: 13px;
-				padding-top: var(--heading-padding-top);
+				gap: 0.5em;
+				font-size: 9pt;
+
+				padding-top: calc(var(--heading-padding-top) - 0.75em);
+			}
+			header ul li:not(:nth-child(1)):before {
+				content: "|";
 			}
 
 			.item-container h3 {
@@ -80,40 +93,36 @@
 			}
 
 			.detail-in-header {
-				font-size: 0.8em;
 				color: #2d3a3a;
-			}
-
-			.detail-in-header a {
-				color: blue;
-				padding-inline: 0.5em;
-				font-weight: 600;
+				font-size: 10pt;
 			}
 
 			/* Targets the skills for projects & work section */
 			.projects-section ul:nth-child(2n),
 			.work-section ul:nth-child(2n) {
 				color: var(--text-color-grey);
-				font-size: 0.8em;
 				display: flex;
 				gap: 15px;
+				font-size: 9pt;
+				font-style: italic;
 			}
 
 			/* Targets the description of the projects & work section */
 			.projects-section ul:nth-child(2n - 1),
-			.work-section ul:nth-child(2n - 1) {
+			.work-section ul:nth-child(2n - 1),
+			.education-section ul:nth-child(n) {
 				list-style: disc;
 
 				padding-top: 0.25em;
-				padding-inline: 1.5em 1em;
+				padding-left: 1em;
 			}
 
 			.skills-section ul {
 				padding-top: 0.75em;
 				padding-inline: 1em;
-				display: flex;
-				flex-direction: row;
-				gap: 2em;
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+				gap: 0.5em;
 			}
 		</style>
 	</head>
@@ -154,6 +163,55 @@
 				</nav>
 			</header>
 			<main>
+				<section aria-labelledby="education" class="education-section">
+					<h2 id="education">Education</h2>
+					<hr />
+					<div class="item-container">
+						<h3>
+							B.S., Computer and Information Science
+							<span class="detail-in-header">
+								<em> &mdash; Brooklyn College, CUNY</em>
+							</span>
+						</h3>
+						<ul>
+							<li>
+								<strong>Relevant Courses: </strong> Data
+								Structures, Algorithms Analysis, Database
+								Systems
+							</li>
+						</ul>
+					</div>
+					<div class="item-container">
+						<h3>
+							Tech Talent Pipeline Residency Program
+							<span class="detail-in-header">
+								<em> &mdash; Brooklyn College, CUNY</em>
+							</span>
+						</h3>
+						<ul>
+							<li>
+								Learnt React, Express, PostgreSQL and Sequelize
+								during a one month web-development training.
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section aria-labellledby="other-skills" class="skills-section">
+					<h2 id="other-skills">Other Skills</h2>
+					<hr />
+					<ul>
+						<li>HTML5/CSS3</li>
+						<li>JavaScript (ES6+)</li>
+						<li>React.js</li>
+						<li>REST APIs</li>
+						<li>Express.js</li>
+						<li>PostgreSQL</li>
+						<li>Sequelize</li>
+						<li>CI/CD</li>
+						<li>Git/GitHub</li>
+						<li>Nginx</li>
+					</ul>
+				</section>
 				<section aria-labelledby="projects" class="projects-section">
 					<h2 id="projects">Projects</h2>
 					<hr />
@@ -185,21 +243,27 @@
 							</span>
 						</h3>
 						<ul>
-							<li>React</li>
+							<li>React.js</li>
 							<li>REST API</li>
-							<li>Express</li>
+							<li>Express.js</li>
 							<li>Sequelize</li>
 							<li>PostgreSQL</li>
 						</ul>
 						<ul>
 							<li>
-								This project was made to solve the problem of
-								losing track of items in pantries and cupboards
-								in the kitchen. This app renders a list of items
-								that the user can add, edit or delete and stores
-								the data in a PostgreSQL database through a
-								Sequelize ORM and utilizes complex
-								<em>m:n</em> relationships between the Models.
+								Built a full-stack web app to allow users to
+								create a web-based iteration of their pantry to
+								help track their products in a more manageable
+								manner and remind them of the items they have
+								available.
+							</li>
+							<li>
+								Implemented a RESTful API which the software
+								queries to get the user-entered data.
+							</li>
+							<li>
+								Designed the client-facing software with
+								Bootstrap to streamline user experience.
 							</li>
 						</ul>
 					</div>
@@ -213,23 +277,21 @@
 										href="https://github.com/abrahym-sharfeldden/react-boilerplate"
 										target="_blank"
 									>
-										Repo
+										Code
 									</a>
 								</em>
 							</span>
 						</h3>
 						<ul>
-							<li>React</li>
-							<li>Node</li>
-							<li>Webpack</li>
+							<li>React.js</li>
+							<li>Node.js</li>
+							<!-- <li>Webpack</li> -->
 						</ul>
 						<ul>
 							<li>
-								This project was made to experiment with core
-								React and deep dive into the complexities that
-								CRA handles for you behind the hood. It creates
-								a working boilerplate directory for you with one
-								simple command.
+								Constructed a package that will build a folder
+								directory with the bare minimum dependencies
+								needed to begin developing a basic project.
 							</li>
 						</ul>
 					</div>
@@ -256,7 +318,7 @@
 						</h3>
 						<ul>
 							<li>HTML/CSS</li>
-							<li>Javascript</li>
+							<li>JavaScript</li>
 							<li>Data Structures & Algorithms</li>
 						</ul>
 						<ul>
@@ -281,7 +343,7 @@
 
 						<ul>
 							<li>Wordpress</li>
-							<li>Javascript</li>
+							<li>JavaScript</li>
 							<li>JQuery</li>
 							<li>Python</li>
 						</ul>
@@ -312,50 +374,26 @@
 						</h3>
 						<ul>
 							<li>HTML/CSS</li>
-							<li>Javascript</li>
+							<li>JavaScript</li>
 							<li>PHP</li>
 						</ul>
 						<ul>
 							<li>
 								Managed 3 teams of 5-7 members to develop web
-								applications for local small businesses.
+								applications for local small businesses
+								including product/food, informational and
+								brochure websites.
 							</li>
 							<li>
 								Measured project performance weekly and
-								increased development efficiency by 50%
+								increased development efficiency, based on speed
+								and quality of code, by 50% resulting in higher
+								turnover.
 							</li>
 						</ul>
 					</div>
 				</section>
-				<section aria-labellledby="other-skills" class="skills-section">
-					<h2 id="other-skills">Other Skills</h2>
-					<hr />
-					<ul>
-						<li>Semantic HTML</li>
-						<li>Git</li>
-						<li>Travis CI</li>
-						<li>Passport.js</li>
-						<li>DB Modeling</li>
-						<li>Nginx</li>
-					</ul>
-				</section>
-				<section aria-labelledby="education" class="education-section">
-					<h2 id="education">Education</h2>
-					<hr />
-					<div class="item-container">
-						<h3>
-							CUNY - Brooklyn College
-							<span class="detail-in-header">
-								<em>
-									&mdash; B.S. Computer and Information
-									Science</em
-								>
-							</span>
-						</h3>
-					</div>
-				</section>
 			</main>
-			<footer></footer>
 		</div>
 	</body>
 </html>
